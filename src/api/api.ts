@@ -16,7 +16,7 @@ export const apiNews = {
       const { data } = await instance.get<ResponseNews>("/newstories.json"); // [массив ID]
       return data.slice(0, litit);
     } catch (e) {
-      console.log(e.message);
+      console.log(e instanceof Error ? e.message : String(e));
     }
   },
 
@@ -34,7 +34,7 @@ export const apiNews = {
       const { data } = await instance.get<Story | Comment>(`/item/${id}.json`);
       return data;
     } catch (e) {
-      console.log(e.message);
+      console.log(e instanceof Error ? e.message : String(e));
     }
   },
 };
