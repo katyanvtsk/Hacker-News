@@ -12,7 +12,7 @@ const CommentItem = ({
   depth = 0,
 }: CommentItemProps): JSX.Element => {
   return (
-    <li className={depth > 0 ? "mt-3" : undefined}>
+    <li className={depth > 0 ? "mt-3" : "py-4 first:pt-0 last:pb-0"}>
       <article
         className="rounded-lg bg-gray-50 px-4 py-3 ring-1 ring-gray-200"
         style={{ marginLeft: depth > 0 ? `${Math.min(depth, 6) * 1.25}rem` : 0 }}
